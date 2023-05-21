@@ -1,5 +1,6 @@
-import './index.html'
-import './templates/contacts.html'
+import './index.html';
+import './index.scss';
+
 
 const mul = (a, b) => a * b;
 console.log(mul(3, 4));

@@ -4,15 +4,24 @@
   "description": "npm install webpack -D     npm install webpack-cli webpack-dev-server -D",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --node-env=development",
+    "start": "webpack serve --port=3333 --node-env=development",
     "build-dev": "webpack --node-env=development",
     "build": "webpack --node-env=production"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^6.7.4",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.1",
+    "install": "^0.13.0",
+    "mini-css-extract-plugin": "^2.7.6",
+    "postcss": "^8.4.23",
+    "postcss-loader": "^7.3.0",
+    "postcss-preset-env": "^8.4.1",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.2.2",
+    "style-loader": "^3.3.3",
     "webpack": "^5.83.1",
     "webpack-cli": "^5.1.1",
     "webpack-dev-server": "^4.15.0"
