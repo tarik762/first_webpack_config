@@ -1,27 +1,43 @@
-#install webpack
+## install webpack
+```
     npm install -D webpack 
     npm install -D webpack-cli webpackev-server 
+```
 
-#install html-webpack-plugin
-    npm install -D html-webpack-plugin 
+## install html webpack plugin
+```
+    npm install -D html-webpack-plugin
+```
 
-#install html loader
-    npm install -D html-loader 
+## install html loader
+```
+    npm install -D html-loader
+```
 
-#install styles-loader 
+## install styles loaders
+```
     npm install -D style-loader 
     npm install -D css-loader 
-    npm install -D sass-loader sass 
+    npm install -D sass-loader sass
+```
 
-#install minify css extract plugin
+## install minify css extract plugin
+```
     npm install -D mini-css-extract-plugin 
+```
 
-#install postcss-loader plugin for autoprefix like -moz -webkit
+## install postcss-loader plugin for autoprefix like -moz -webkit
+```
     npm install -D postcss-loader postcss postcss-preset-env 
+```
 
-#install BABEL
+## install BABEL
+```
     npm install -D babel-loader @babel/core @babel/preset-env
     npm install -D @babel/runtime-corejs3
+```
 
-#install image loader
+## install image loader
+```
     npm install -D file-loader image-webpack-loader
+```
