@@ -1,1 +1,1 @@
-document.write("YAHUU");
+import '../templates/page.html'

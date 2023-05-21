@@ -4,3 +4,6 @@
 
 #install html-webpack-plugin
     npm install html-webpack-plugin -D
+
+#install html-loader
+    npm install html-loader -D

@@ -25,7 +25,7 @@ let html_pages_container = html_pages.map(name => {
     return new HtmlWebpackPlugin({
         template: path.resolve(__dirname, 'src/templates', `${name}.html`), // relative path to the HTML files
         filename: `${name}.html`, // output HTML files
-        chunks: [`${name}`]
+        chunks: ['main', `${name}`]
         //chunks: [`${name}`] // respective JS files
     })
 });
@@ -48,10 +48,10 @@ export default {
     target,
     devtool,
     entry: {
-        "main": path.resolve(__dirname, 'src', 'index.js'), //Яка папка для вебпака як точка входу
-        "page": path.resolve(__dirname, 'src/scripts', 'page.js'),
-        "contacts": path.resolve(__dirname, 'src/scripts', 'contacts.js'),
-        "error": path.resolve(__dirname, 'src/scripts', 'error.js')
+        main: path.resolve(__dirname, 'src', 'index.js'), //MAIN FILE
+        page: path.resolve(__dirname, 'src/scripts', 'page.js'),
+        contacts: path.resolve(__dirname, 'src/scripts', 'contacts.js'),
+        error: path.resolve(__dirname, 'src/scripts', 'error.js')
     },
     output: {
         path: path.resolve(__dirname, 'build'), //яка папака для 'білд' і 'прод' файлів
@@ -62,5 +62,17 @@ export default {
     //Додаємо плагіни скачані в конфіг в масиві
     plugins: [
         ...html_pages_container //Додаємо наші шаблони ХТМЛ
-    ]
+    ],
+    module: {
+        rules: [
+            {
+                //Наш HTML loader
+                test: /\.html$/i,
+                loader: 'html-loader'
+            }
+        ]
+    },
+    devServer: {
+        open: true
+    }
 }
