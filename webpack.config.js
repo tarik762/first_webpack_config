@@ -62,7 +62,8 @@ export default {
     output: {
         path: path.resolve(__dirname, 'build'), //яка папака для 'білд' і 'прод' файлів
         clean: true, //чи очищати папаку для білд і прод
-        filename: 'js/[name].[contenthash].js' //файли  js на виході в dist з хешем
+        filename: 'js/[name].[contenthash].js', //файли  js на виході в dist з хешем
+        assetModuleFilename: "assets/[hash][ext]"
     },
 
     //Додаємо плагіни скачані в конфіг в масиві
@@ -115,9 +116,43 @@ export default {
                 test: /\.woff2?$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'fonts/[name].[ext]'
+                    filename: 'fonts/[name][ext]'
+                }
+            },
+            // Images 
+            {
+                test: /\.(jpe?g|png|webp|gif)$/i,
+                use: [
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            mozjpeg: {
+                                progressive: true,
+                            },
+                            // optipng.enabled: false will disable optipng
+                            optipng: {
+                                enabled: false,
+                            },
+                            pngquant: {
+                                quality: [0.65, 0.90],
+                                speed: 4
+                            },
+                            gifsicle: {
+                                interlaced: false,
+                            },
+                            // the webp option will enable WEBP
+                            webp: {
+                                quality: 75
+                            }
+                        }
+                    }
+                ],
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/[hash][ext]'
                 }
             }
+            // 
         ]
     },
     devServer: {

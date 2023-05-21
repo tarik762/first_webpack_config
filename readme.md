@@ -22,3 +22,6 @@
 #install BABEL
     npm install -D babel-loader @babel/core @babel/preset-env
     npm install -D @babel/runtime-corejs3
+
+#install image loader
+    npm install -D file-loader image-webpack-loader
