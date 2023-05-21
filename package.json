@@ -1,0 +1,20 @@
+{
+  "name": "first_webpack_config",
+  "version": "1.0.0",
+  "description": "npm install webpack -D     npm install webpack-cli webpack-dev-server -D",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --node-env=development",
+    "build-dev": "webpack --node-env=development",
+    "build": "webpack --node-env=production"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.1",
+    "webpack": "^5.83.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  },
+  "type": "module"
+}
