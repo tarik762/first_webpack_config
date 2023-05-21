@@ -53,6 +53,7 @@ export default {
         compress: true
     },
     entry: {
+        //Must be write in automation ...maybe later
         main: path.resolve(__dirname, 'src', 'index.js'), //MAIN FILE
         page: path.resolve(__dirname, 'src/scripts', 'page.js'),
         contacts: path.resolve(__dirname, 'src/scripts', 'contacts.js'),
@@ -73,12 +74,13 @@ export default {
     ],
     module: {
         rules: [
+            // HTML Loader
             {
                 //Наш HTML loader
                 test: /\.html$/i,
                 loader: 'html-loader'
             },
-            //Наш CSS Loader
+            // CSS Loader
             {
                 test: /\.(c|sa|sc)ss$/i,
                 use: [
@@ -95,6 +97,27 @@ export default {
                     'sass-loader'
                 ]
             },
+            // JS Loader BABEL
+            {
+                test: /\.(?:js|mjs|cjs)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['@babel/preset-env', { targets: "defaults" }]
+                        ]
+                    }
+                }
+            },
+            // Fonts WOFF, WOFF2
+            {
+                test: /\.woff2?$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[name].[ext]'
+                }
+            }
         ]
     },
     devServer: {

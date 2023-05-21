@@ -1,7 +1,6 @@
 import './index.html';
 import './index.scss';
+import { mult, sum } from "./modules/calc.js";
 
-
-const mul = (a, b) => a * b;
-console.log(mul(3, 4));
-console.log(mul(4, 5));
+console.log(mult(10, 20));
+console.log(sum(10, 20));
