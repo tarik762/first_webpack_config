@@ -54,7 +54,7 @@ export default {
     },
     entry: {
         //Must be write in automation ...maybe later
-        main: path.resolve(__dirname, 'src', 'index.js'), //MAIN FILE
+        main: path.resolve(__dirname, 'src', 'index.jsx'), //MAIN FILE
         page: path.resolve(__dirname, 'src/scripts', 'page.js'),
         contacts: path.resolve(__dirname, 'src/scripts', 'contacts.js'),
         error: path.resolve(__dirname, 'src/scripts', 'error.js')
@@ -97,6 +97,15 @@ export default {
                     },
                     'sass-loader'
                 ]
+            },
+            // JSX Loader
+            {
+                test: /\.jsx?$/, // определяем тип файлов
+                exclude: /(node_modules)/,  // исключаем из обработки папку node_modules
+                loader: "babel-loader",   // определяем загрузчик
+                options: {
+                    presets: ["@babel/preset-react"]    // используемые плагины
+                }
             },
             // JS Loader BABEL
             {

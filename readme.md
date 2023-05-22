@@ -35,9 +35,16 @@
 ```
     npm install -D babel-loader @babel/core @babel/preset-env
     npm install -D @babel/runtime-corejs3
+    npm install -D core-js
 ```
 
 ## install image loader
 ```
     npm install -D file-loader image-webpack-loader
+```
+
+## install react
+```
+    npm install -D react
+    npm install -D react-dom
 ```
